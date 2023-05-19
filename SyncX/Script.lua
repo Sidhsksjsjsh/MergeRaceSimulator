@@ -28,12 +28,12 @@ function ReplicatedStorageGetServer(format)
 end
 
 function GetDoor(format)
-  game:GetService("ReplicatedStorage").jgn bilangRemotes.getDoor:InvokeServer(unpack(args))
+  game:GetService("ReplicatedStorage").Remotes.getDoor:InvokeServer(format)
 end
 
 local Cars = {}
 
-for _,Car in pairs(game:GetService("Workspace").Merge[game.Players.LocalPlayer]:GetChildren()) do
+for _,Car in pairs(game:GetService("Workspace").Merge[game.Players.LocalPlayer.Name]:GetChildren()) do
     table.insert(Cars, Car.Name)
 end
 
@@ -327,7 +327,7 @@ T1:AddSwitch("Auto click cars", function(bool)
     _G.ClickCars = bool
     while wait() do
       if _G.ClickCars == false then break end
-      for _,Car in pairs(game:GetService("Workspace").Merge[game.Players.LocalPlayer]:GetChildren()) do
+      for _,Car in pairs(game:GetService("Workspace").Merge[game.Players.LocalPlayer.Name]:GetChildren()) do
           table.insert(Cars, Car.Name)
       end
       
