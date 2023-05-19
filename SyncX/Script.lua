@@ -331,7 +331,7 @@ T1:AddSwitch("Auto click cars", function(bool)
           table.insert(Cars, Car.Name)
       end
       
-      ReplicatedStorageServer("ClickCar",workspace.Merge[game.Players.LocalPlayer][Cars[math.random(1, #Cars)]])
+      ReplicatedStorageServer("ClickCar",game:GetService("Workspace").Merge[game.Players.LocalPlayer.Name][Cars[math.random(1, #Cars)]])
     end
 end)
 
@@ -363,7 +363,7 @@ T1:AddSwitch("auto race", function(bool)
    end
 end)
 
-T1:AddSwitch("auto spawn random car", function(bool)
+T1:AddSwitch("auto spawn random car [Patched]", function(bool)
         _G.RandomCars = bool
         while wait() do
             if _G.RandomCars == false then break end
